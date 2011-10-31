@@ -34,4 +34,12 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.mock_auth[:linked_in] = {
+    'provider' => 'linked_in',
+    'uid' => '123545'
+  }
+
 end
