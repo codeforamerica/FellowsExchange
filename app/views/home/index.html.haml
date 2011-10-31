@@ -2,3 +2,14 @@
   %h1 Home
   %p
     = "Welcome, #{current_user.name} !"
+
+  %table
+    %thead
+      %tr
+        %th Name
+        %th
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= link_to 'Show', '#'
