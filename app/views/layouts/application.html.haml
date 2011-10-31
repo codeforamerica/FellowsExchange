@@ -13,10 +13,10 @@
     .topbar
       .fill
         .container
-          %a.brand{:href => "#"} Fellows Exchange
+          = link_to 'Fellows Exchange', root_path, :class => 'brand'
           %ul.nav
             %li
-              = link_to 'Home', '#'
+              = link_to 'Home', home_index_path
             %li
               = link_to 'About', '#'
             %li
