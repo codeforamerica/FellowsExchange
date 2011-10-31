@@ -1,0 +1,50 @@
+!!! 5
+%html
+  %head
+    %title FellowsExchange
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    %style{:type => "text/css"}
+      body {padding-top: 60px;}
+
+  %body
+    .topbar
+      .fill
+        .container
+          %a.brand{:href => "#"} Fellows Exchange
+          %ul.nav
+            %li
+              = link_to 'Home', '#'
+            %li
+              = link_to 'About', '#'
+            %li
+              - if current_user
+                = link_to "Sign Out", signout_path
+              - else
+                = link_to "Sign in with LinkedIn", "/auth/linked_in"
+
+    .container
+      .hero-unit
+        %h1 Hello, Code for America Fellows!
+        %p Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+        %p <a class="btn primary large">Learn more &raquo;</a>
+
+      .row
+        .span6
+          %h2 Heading
+          %p Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          %p <a class="btn" href="#">View details &raquo;</a>
+        .span5
+          %h2 Heading
+          %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          %p <a class="btn" href="#">View details &raquo;</a>
+        .span5
+          %h2 Heading
+          %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+          %p <a class="btn" href="#">View details &raquo;</a>
+
+      %footer
+        %p &copy; Company 2011
+
