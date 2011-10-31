@@ -39,7 +39,8 @@ RSpec.configure do |config|
 
   OmniAuth.config.mock_auth[:linked_in] = {
     'provider' => 'linked_in',
-    'uid' => '123545'
+    'uid' => '123545',
+    'user_info' => {'name' => "Ben Franklin"}
   }
 
 end
