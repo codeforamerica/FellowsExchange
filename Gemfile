@@ -13,6 +13,7 @@ end
 gem 'acts-as-taggable-on'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'linkedin'
 gem 'omniauth'
 
 group :development, :test do
