@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @Users = User.all
+    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb

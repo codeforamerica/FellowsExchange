@@ -1,2 +1,15 @@
-%h1 User#index
-%p Find me in app/views/user/index.html.haml
+.container
+  %h1 Users
+
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Skills
+        %th
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= user.skill_list
+          %td= link_to 'Show', user
