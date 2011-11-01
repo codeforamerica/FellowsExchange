@@ -1,2 +1,21 @@
-%h1 User#show
-%p Find me in app/views/user/show.html.haml
+.container
+  %h1
+    = @user.name
+
+  %h2
+    = @linked_in.headline
+
+  %p
+    = image_tag @linked_in.picture_url
+
+  %p
+    = @linked_in.summary
+
+  %p
+    = link_to 'LinkedIn Profile', @linked_in.site_standard_profile_request.url
+
+  %h3 Skills
+  = @user.skill_list
+
+  %h3 Interests
+  = @user.interest_list
