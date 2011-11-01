@@ -7,6 +7,12 @@ describe SessionsController do
   end
 
   describe "#create" do
+    before do
+      stub_request(:get, "https://api.linkedin.com/v1/people/~:(certifications,educations,phone-numbers,positions,picture-url,skills,summary)").
+         to_return(:status => 200, :body => fixture("linked_in_profile.json"), :headers => {})
+    end
+
+
     it "should create a new user using omniauth" do
       get :create, :provider => 'linked_in'
       @user = User.last
