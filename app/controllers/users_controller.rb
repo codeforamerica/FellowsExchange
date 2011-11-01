@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
 
-
+    if params[:skill].nil?
+      @users = User.all
+    else
+      @users = User.tagged_with(params[:skill])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
