@@ -1,4 +1,6 @@
 FellowsExchange::Application.routes.draw do
+  resources :users, :only => [:index, :edit, :update]
+
   get "home/index"
 
   root :to => "welcome#index"
