@@ -1,5 +1,5 @@
 FellowsExchange::Application.routes.draw do
-  resources :users, :only => [:index, :edit, :update]
+  resources :users, :only => [:index, :edit, :show, :update]
 
   get "home/index"
 
