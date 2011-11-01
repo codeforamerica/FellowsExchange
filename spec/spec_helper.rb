@@ -44,4 +44,14 @@ RSpec.configure do |config|
     'credentials' => {'token' => 'abc123', 'secret' => 'xyz987'}
   }
 
+def fixture_path
+  File.expand_path('../fixtures', __FILE__)
+end
+
+
+def fixture(file)
+  File.new(fixture_path + '/' + file)
+end
+
+
 end
