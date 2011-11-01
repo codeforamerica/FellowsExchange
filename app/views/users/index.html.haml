@@ -11,5 +11,8 @@
       - @users.each do |user|
         %tr
           %td= user.name
-          %td= user.skill_list
+          %td
+            - unless user.skills.nil?
+              - user.skill_list.each do |skills|
+                = link_to skills, :skill => skills
           %td= link_to 'Show', user
