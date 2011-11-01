@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["user_info"]["name"]
+      user.skill_list = user.add_linked_in_info(auth)
     end
   end
 
