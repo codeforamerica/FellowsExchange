@@ -13,4 +13,9 @@ class SessionsController < ApplicationController
     redirect_to root_url, :notice => "Signed out!"
   end
 
+  def error
+    flash[:error] = "Sign in with LinkedIn failed!"
+    redirect_to root_path
+  end
+
 end

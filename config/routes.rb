@@ -6,6 +6,8 @@ FellowsExchange::Application.routes.draw do
   root :to => "welcome#index"
 
   match "/auth/:provider/callback" => "sessions#create"
+  get '/auth/failure', :to => 'sessions#error', :as => 'failure'
   match "/signout" => "sessions#destroy", :as => :signout
+
 
 end
