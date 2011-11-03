@@ -31,16 +31,16 @@ class UsersController < ApplicationController
 
  # GET /Users/1/edit
   def edit
-    @User = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   # PUT /Users/1
   # PUT /Users/1.json
   def update
-    @User = User.find(params[:id])
+    @user = User.find(params[:id])
 
     respond_to do |format|
-      if @User.update_attributes(params[:user])
+      if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :ok }
       else

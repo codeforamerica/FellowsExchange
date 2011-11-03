@@ -1,0 +1,23 @@
+= form_for @user do |f|
+  - if @user.errors.any?
+    %div{:class => "alert-message block-message error"}
+      %a.close{:href => "#"} &times;
+      %p
+        %strong
+          = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        %ul
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+
+  .fieldset
+    .legend
+    .clearfix
+      = f.label :skill_list
+      .input
+        = f.text_area :skill_list, :class => "xxlarge", :rows => 3
+    .clearfix
+      = f.label :interest_list
+      .input
+        = f.text_area :interest_list, :class => "xxlarge", :rows => 3
+    .actions
+      = f.submit 'Save', {:class => "btn primary"}
