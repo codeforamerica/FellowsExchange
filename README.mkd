@@ -2,7 +2,7 @@
 A Ruby on Rails application for Fellows to see what interests and skills they share.
 
 ## <a name="ci">Continuous Integration</a>
-[![Build Status](https://secure.travis-ci.org/codeforamerica/fellowsexchange.png)](http://travis-ci.org/codeforamerica/fellowsexchange)
+[![Build Status](https://secure.travis-ci.org/codeforamerica/FellowsExchange.png)](http://travis-ci.org/codeforamerica/FellowsExchange)
 
 ## <a name="installation">Installation</a>
     git clone git://github.com/codeforamerica/fellowsexchange.git
