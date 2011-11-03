@@ -1,6 +1,22 @@
 .container
   %h1 Users
 
+  = form_tag users_path, :method => 'get' do
+    .well
+      .row
+        .span6
+          .clearfix
+            = label_tag "Skills"
+            .input
+              = text_field_tag :skill, params[:skill]
+          .clearfix
+            = label_tag "Interests"
+            .input
+              = text_field_tag :interests, params[:interest]
+      .row
+        .span5
+          = submit_tag "Search", :name => nil, :class => "btn info"
+
   %table
     %thead
       %tr
