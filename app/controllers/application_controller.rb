@@ -7,9 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
-    if session['userid']
-      client.authorize_from_access(session['access_token'], session['access_secret'])
-      @user = client.profile
+    if session['user_id']
     else
       redirect_to failure_path
     end
