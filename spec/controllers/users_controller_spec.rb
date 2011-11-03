@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe UsersController do
+
+  before do
+    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:linked_in]
+    session[:user_id] = 1
+  end
+
   describe "#index" do
     it "should render the index template" do
       get :index
