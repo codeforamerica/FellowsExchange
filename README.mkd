@@ -8,6 +8,7 @@ A Ruby on Rails application for Fellows to see what interests and skills they sh
     git clone git://github.com/codeforamerica/fellowsexchange.git
     cd fellowsexchange
     bundle install
+    rake db:migrate
 
 ## <a name="usage">Usage</a>
     LINKEDIN_KEY="abc123" LINKEDIN_SECRET="xyz987" rails server
