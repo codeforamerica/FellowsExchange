@@ -24,6 +24,15 @@ describe User do
         test.should == "Ruby on Rails,ESRI,GIS"
       end
     end
+
+    context "#add_linked_in_id" do
+      it "should add the linked in id to the user" do
+        @client = User.new
+        user_id = @client.add_linked_in_id(@auth)
+        user_id.should == "abc123"
+      end
+    end
+
   end
 
 end
