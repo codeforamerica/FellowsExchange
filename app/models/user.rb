@@ -13,11 +13,8 @@ class User < ActiveRecord::Base
   end
 
   def add_linked_in_skills(auth)
-    client = linked_in_client
-    rtoken = auth['credentials']['token']
-    rsecret = auth['credentials']['secret']
+    client = linked_in_client(auth)
 
-    client.authorize_from_access(rtoken, rsecret)
 
     @skill = client.profile.skills
     skill = []
@@ -35,7 +32,7 @@ class User < ActiveRecord::Base
 
   protected
 
-  def linked_in_client
+  def linked_in_client(auth)
     LinkedIn.configure do |config|
       config.token = ENV['LINKEDIN_KEY']
       config.secret = ENV['LINKEDIN_SECRET']
@@ -43,6 +40,10 @@ class User < ActiveRecord::Base
         'phone-numbers','positions','picture-url','skills','summary']
     end
     linked_in = LinkedIn::Client.new
+    rtoken = auth['credentials']['token']
+    rsecret = auth['credentials']['secret']
+
+    linked_in.authorize_from_access(rtoken, rsecret)
     linked_in_client ||= linked_in
   end
 
