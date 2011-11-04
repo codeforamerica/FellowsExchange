@@ -36,8 +36,8 @@ class User < ActiveRecord::Base
     LinkedIn.configure do |config|
       config.token = ENV['LINKEDIN_KEY']
       config.secret = ENV['LINKEDIN_SECRET']
-      config.default_profile_fields = ['certifications','educations',
-        'phone-numbers','positions','picture-url','skills','summary']
+      config.default_profile_fields = ['id','certifications','educations','positions',
+        'picture-url','skills','summary']
     end
     linked_in = LinkedIn::Client.new
     rtoken = auth['credentials']['token']
