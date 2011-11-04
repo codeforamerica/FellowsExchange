@@ -3,15 +3,4 @@
   %p
     = "Welcome, #{current_user.name} !"
 
-  %table
-    %thead
-      %tr
-        %th Name
-        %th Skills
-        %th
-    %tbody
-      - @users.each do |user|
-        %tr
-          %td= user.name
-          %td= user.skill_list
-          %td= link_to 'Show', user
+  = render 'users/search'

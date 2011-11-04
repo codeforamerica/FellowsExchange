@@ -1,0 +1,12 @@
+= form_tag users_path, :method => 'get' do
+  .well
+    .row
+      .span6
+        .clearfix
+          = label_tag "Skills / Interests"
+          .input
+            = text_field_tag :tag, params[:tag]
+    .row
+      .span5
+        = submit_tag "Search", :name => nil, :class => "btn info"
+
