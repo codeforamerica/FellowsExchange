@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_taggable
-  acts_as_taggable_on :skills, :interests
+  acts_as_taggable_on :tags, :skills,:interests
 
 
   def self.create_with_omniauth(auth)
