@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["user_info"]["name"]
       user.skill_list = user.add_linked_in_skills(auth)
+      user.linked_in_id = user.add_linked_in_id(auth)
     end
   end
 
@@ -28,6 +29,12 @@ class User < ActiveRecord::Base
 
     user_skills
 
+  end
+
+  def add_linked_in_id(auth)
+    client = linked_in_client(auth)
+
+    client.profile.id
   end
 
   protected
