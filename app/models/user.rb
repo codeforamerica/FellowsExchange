@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["user_info"]["name"]
-      user.skill_list = user.add_linked_in_info(auth)
+      user.skill_list = user.add_linked_in_skills(auth)
     end
   end
 
-  def add_linked_in_info(auth)
+  def add_linked_in_skills(auth)
     client = linked_in_client
     rtoken = auth['credentials']['token']
     rsecret = auth['credentials']['secret']
