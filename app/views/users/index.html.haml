@@ -6,13 +6,9 @@
       .row
         .span6
           .clearfix
-            = label_tag "Skills"
+            = label_tag "Skills / Interests"
             .input
-              = text_field_tag :skill, params[:skill]
-          .clearfix
-            = label_tag "Interests"
-            .input
-              = text_field_tag :interests, params[:interest]
+              = text_field_tag :tag, params[:tag]
       .row
         .span5
           = submit_tag "Search", :name => nil, :class => "btn info"
@@ -30,5 +26,5 @@
           %td
             - unless user.skills.nil?
               - user.skill_list.each do |skills|
-                = link_to skills, :skill => skills
+                = link_to skills, :tag => skills
           %td= link_to 'Show', user
