@@ -3,10 +3,10 @@ class UsersController < ApplicationController
 
   def index
 
-    if params[:skill].nil?
+    if params[:tag].blank?
       @users = User.all
     else
-      @users = User.tagged_with(params[:skill])
+      @users = User.tagged_with(params[:tag])
     end
 
     respond_to do |format|
