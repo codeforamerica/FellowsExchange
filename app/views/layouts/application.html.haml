@@ -31,7 +31,7 @@
     .row
       %div{:class => "span15 offset3"}
         - if flash[:error]
-          %div{:class => "alert-message error"}
+          %div{:class => "alert-message error", 'data-alert' => 'alert'}
             %a.close{:href => "#"} &times;
             %p{:id => "error"}
               = flash[:error]
