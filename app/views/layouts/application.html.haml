@@ -26,17 +26,19 @@
             %ul.nav
               %li
                 = link_to "Sign in with LinkedIn", "/auth/linked_in"
-    - if flash[:error]
-      %div{:class => "alert-message error"}
-        %a.close{:href => "#"} &times;
-        %p{:id => "error"}
-          = flash[:error]
-    - if flash[:notice]
-      %div{:class => 'alert-message success fade in', 'data-alert' => 'alert'}
-        %a.close{:href => '#'} x
-        %p
-          %strong
-            = notice
+    .row
+      %div{:class => "span15 offset3"}
+        - if flash[:error]
+          %div{:class => "alert-message error"}
+            %a.close{:href => "#"} &times;
+            %p{:id => "error"}
+              = flash[:error]
+        - if flash[:notice]
+          %div{:class => 'alert-message success fade in', 'data-alert' => 'alert'}
+            %a.close{:href => '#'} x
+            %p
+              %strong
+                = notice
     = yield
 
     %footer
