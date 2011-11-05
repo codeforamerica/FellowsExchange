@@ -20,4 +20,6 @@
       = link_to skills, users_path(:tag => skills)
 
   %h3 Interests
-  = @user.interest_list
+  - unless @user.interests.nil?
+    - @user.interest_list.each do |interest|
+      = link_to interest, users_path(:tag => interest)
