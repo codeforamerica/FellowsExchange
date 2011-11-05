@@ -3,18 +3,21 @@
 
   = render 'search'
 
-  %table
-    %thead
-      %tr
-        %th Name
-        %th Skills
-        %th
-    %tbody
-      - @users.each do |user|
+  - if @users.empty?
+    %h2 No results found
+  - else
+    %table
+      %thead
         %tr
-          %td= user.name
-          %td
-            - unless user.skills.nil?
-              - user.skill_list.each do |skills|
-                = link_to skills, :tag => skills
-          %td= link_to 'Show', user
+          %th Name
+          %th Skills
+          %th
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= user.name
+            %td
+              - unless user.skills.nil?
+                - user.skill_list.each do |skills|
+                  = link_to skills, :tag => skills
+            %td= link_to 'Show', user
