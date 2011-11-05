@@ -15,7 +15,9 @@
     = link_to 'LinkedIn Profile', @linked_in.site_standard_profile_request.url
 
   %h3 Skills
-  = @user.skill_list
+  - unless @user.skills.nil?
+    - @user.skill_list.each do |skills|
+      = link_to skills, users_path(:tag => skills)
 
   %h3 Interests
   = @user.interest_list
