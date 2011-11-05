@@ -32,13 +32,13 @@ class UsersController < ApplicationController
 
  # GET /Users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # PUT /Users/1
   # PUT /Users/1.json
   def update
-    @user = User.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
