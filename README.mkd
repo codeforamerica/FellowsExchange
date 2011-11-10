@@ -13,6 +13,9 @@ A Ruby on Rails application for Fellows to see what interests and skills they sh
 ## <a name="usage">Usage</a>
     LINKEDIN_KEY="abc123" LINKEDIN_SECRET="xyz987" rails server
 
+## <a name="screenshots">Screenshot</a>
+![Fellows Exchange](https://github.com/codeforamerica/FellowsExchange/raw/master/screenshot.png "FellowsExchange")
+
 ## <a name="contributing">Contributing</a>
 In the spirit of [free software](http://www.fsf.org/licensing/essays/free-sw.html), **everyone** is encouraged to help improve this project.
 
