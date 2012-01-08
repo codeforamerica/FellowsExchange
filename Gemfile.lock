@@ -74,7 +74,7 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.4)
-    linkedin (0.3.5)
+    linkedin (0.3.6)
       hashie (~> 1.2.0)
       multi_json (~> 1.0.3)
       oauth (~> 0.4.5)
