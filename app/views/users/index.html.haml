@@ -11,6 +11,7 @@
         %tr
           %th Name
           %th Skills
+          %th Interests
           %th
       %tbody
         - @users.each do |user|
@@ -20,4 +21,8 @@
               - unless user.skills.nil?
                 - user.skill_list.each do |skills|
                   = link_to skills, :tag => skills
+            %td
+              - unless user.interests.nil?
+                - user.interests_list.each do |interests|
+                  = link_to interets, :tag => interests
             %td= link_to 'Show', user
