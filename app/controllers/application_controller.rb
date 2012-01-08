@@ -22,14 +22,8 @@ class ApplicationController < ActionController::Base
       config.token = ENV['LINKEDIN_KEY']
       config.secret = ENV['LINKEDIN_SECRET']
       config.default_profile_fields = ['id','first-name','last-name','headline','location',
-        'industry','distance','relation-to-viewer','current-share','connections','num-connections',
-        'num-connections-capped','summary','specialties','proposal-comments','associations','honors',
-        'interests','positions','publications','patents','languages','skills','certifications',
-        'educations','three-current-positions','three-past-positions','num-recommenders',
-        'recommendations-received','phone-numbers','im-accounts','twitter-accounts','date-of-birth',
-        'main-address','member-url-resources','picture-url','site-standard-profile-request',
-        'api-public-profile-request','site-public-profile-request','api-standard-profile-request',
-        'public-profile-url']
+        'summary','specialties','interests','positions','languages','skills','site-standard-profile-request',
+        'educations','three-current-positions','three-past-positions','picture-url']
     end
     @client ||= LinkedIn::Client.new
   end

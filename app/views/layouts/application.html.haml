@@ -14,27 +14,33 @@
       .fill
         .container
           = link_to 'FellowsExchange', root_path, :class => 'brand'
-          %ul.nav
-            %li
-              = link_to 'Home', home_index_path
-            %li
-              = link_to 'Fellows', users_path
-            %li
-              - if current_user
+          - if current_user
+            %ul.nav
+              %li
+                = link_to 'Home', home_index_path
+              %li
+                = link_to 'Fellows', users_path
+              %li
+                = link_to 'Edit Profile', edit_user_path(current_user)
+              %li
                 = link_to "Sign Out", signout_path
-              - else
+          - else
+            %ul.nav
+              %li
                 = link_to "Sign in with LinkedIn", "/auth/linked_in"
-    - if flash[:error]
-      %div{:class => "alert-message error"}
-        %a.close{:href => "#"} &times;
-        %p{:id => "error"}
-          = flash[:error]
-    - if flash[:notice]
-      %div{:class => 'alert-message success fade in', 'data-alert' => 'alert'}
-        %a.close{:href => '#'} x
-        %p
-          %strong
-            = notice
+    .row
+      %div{:class => "span15 offset3"}
+        - if flash[:error]
+          %div{:class => "alert-message error", 'data-alert' => 'alert'}
+            %a.close{:href => "#"} &times;
+            %p{:id => "error"}
+              = flash[:error]
+        - if flash[:notice]
+          %div{:class => 'alert-message success fade in', 'data-alert' => 'alert'}
+            %a.close{:href => '#'} x
+            %p
+              %strong
+                = notice
     = yield
 
     %footer

@@ -11,17 +11,28 @@ describe User do
     }
   end
 
-  describe "#add_linked_in_info" do
+  describe "Add LinkedIn Info" do
     before do
-      stub_request(:get, "https://api.linkedin.com/v1/people/~:(certifications,educations,phone-numbers,positions,picture-url,skills,summary)").
+      stub_request(:get, "https://api.linkedin.com/v1/people/~:(id,certifications,educations,positions,picture-url,skills,summary)").
         to_return(:status => 200, :body => fixture("linked_in_profile.json"), :headers => {})
     end
 
-    it "should add the linked in info to the user" do
-      @client = User.new
-      test = @client.add_linked_in_info(@auth)
-      test.should == "Ruby on Rails,ESRI,GIS"
+    context "#add_linked_in_skills" do
+      it "should add the linked in info to the user" do
+        @client = User.new
+        test = @client.add_linked_in_skills(@auth)
+        test.should == "Ruby on Rails,ESRI,GIS"
+      end
     end
+
+    context "#add_linked_in_id" do
+      it "should add the linked in id to the user" do
+        @client = User.new
+        user_id = @client.add_linked_in_id(@auth)
+        user_id.should == "abc123"
+      end
+    end
+
   end
 
 end

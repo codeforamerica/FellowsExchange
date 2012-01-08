@@ -8,7 +8,7 @@ describe SessionsController do
 
   describe "#create" do
     before do
-      stub_request(:get, "https://api.linkedin.com/v1/people/~:(certifications,educations,phone-numbers,positions,picture-url,skills,summary)").
+      stub_request(:get, "https://api.linkedin.com/v1/people/~:(id,certifications,educations,positions,picture-url,skills,summary)").
          to_return(:status => 200, :body => fixture("linked_in_profile.json"), :headers => {})
     end
 

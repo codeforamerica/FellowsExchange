@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     session[:access_token] = request.env['omniauth.auth']['credentials']['token']
     session[:access_secret] = request.env['omniauth.auth']['credentials']['secret']
-    redirect_to root_url, :notice => "Signed in!"
+    redirect_to home_index_path, :notice => "Signed in!"
   end
 
   def destroy
