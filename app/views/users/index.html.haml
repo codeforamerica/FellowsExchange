@@ -23,6 +23,6 @@
                   = link_to skills, :tag => skills
             %td
               - unless user.interests.nil?
-                - user.interests_list.each do |interests|
+                - user.interest_list.each do |interests|
                   = link_to interets, :tag => interests
             %td= link_to 'Show', user
