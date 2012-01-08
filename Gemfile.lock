@@ -130,7 +130,7 @@ GEM
       oa-more (= 0.3.2)
       oa-oauth (= 0.3.2)
       oa-openid (= 0.3.2)
-    pg (0.11.0)
+    pg (0.12.2)
     polyglot (0.3.3)
     pyu-ruby-sasl (0.0.3.3)
     rack (1.3.6)
